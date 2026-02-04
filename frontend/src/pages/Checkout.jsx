@@ -157,7 +157,7 @@ export default function Checkout() {
               onChange={handleChange}
               onBlur={handleBlur}
               required
-              placeholder="e.g. 555-123-4567"
+              placeholder="e.g. 05X XXX XXXX"
               className={`form-input ${touched.phone && errors.phone ? 'form-input-error' : ''}`}
               autoComplete="tel"
             />
