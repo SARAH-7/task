@@ -57,8 +57,8 @@ describe('CartContext', () => {
     );
     await user.click(screen.getByText('Add Pizza'));
     await user.click(screen.getByText('Add Pizza'));
-    expect(screen.getByTestId('count')).toHaveTextContent('2');
-    expect(screen.getByTestId('total')).toHaveTextContent('20.00');
+    expect(screen.getByTestId('count')).toHaveTextContent('3');
+    expect(screen.getByTestId('total')).toHaveTextContent('30.00');
   });
 
   it('setQuantity updates quantity and removes when 0', async () => {

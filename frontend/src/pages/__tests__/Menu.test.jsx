@@ -12,9 +12,14 @@ const mockMenu = [
   { id: '2', name: 'Classic Burger', description: 'Beef patty', price: 9.99, image: 'https://example.com/2.jpg' },
 ];
 
-vi.mock('../../api/client', () => ({
-  getMenu: vi.fn(),
-}));
+vi.mock('../../api/client', async () => {
+  const actual = await vi.importActual('../../api/client');
+  return {
+    ...actual,
+    getMenu: vi.fn(),
+    getAllOrders: vi.fn(() => Promise.resolve([])),
+  };
+});
 
 function renderMenu() {
   return render(
